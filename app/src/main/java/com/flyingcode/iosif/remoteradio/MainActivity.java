@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
     private int port_listen = 5000;
     private RadioPlayer player;
     private boolean playerNeedsPrepare;
-    //private EventLogger eventLogger;
+    private EventLogger eventLogger;
     private String TAG="RadioActivity TAG";
     private String errorString;
 
@@ -235,11 +235,11 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
             player = new RadioPlayer(getRendererBuilder());
             player.addListener(this);
             player.setMetadataListener(this);
-            //eventLogger = new EventLogger();
-           // eventLogger.startSession();
-//            player.addListener(eventLogger);
-//            player.setInfoListener(eventLogger);
-//            player.setInternalErrorListener(eventLogger);
+            eventLogger = new EventLogger();
+            eventLogger.startSession();
+            player.addListener(eventLogger);
+            player.setInfoListener(eventLogger);
+            player.setInternalErrorListener(eventLogger);
 
        player.prepare();
         player.seekTo(0);
