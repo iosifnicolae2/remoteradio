@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Remote Control Radio</title>
+  <meta name="description" content="Remote Control Radio">
+  <meta name="author" content="Iosif Nicolae">
+  <link rel="stylesheet" href="https://remote_android.mailo.ml/css/style.css">
+  <meta name="HandheldFriendly" content="True" />
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="FlyingCode | FlyingCode">
+    <meta name="msapplication-TileColor" content="#3686BE">
+    <meta name="theme-color" content="#3686BE">
+  <!--[if lt IE 9]>
+  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+<h1 id="title"> Remote Control Radio</h1>
+<div class="status">
+  <div id="now_playing"></div>
+    <button class="button" id="stop">Stop</button>
+</div>
+<div id="channels">
+<button class="channel" data-link="http://ascultaradiogosen.no-ip.org:8125/;">Radio Gosen</button>
+<button class="channel" data-link="http://142.4.223.16:8099/stream">Radio Vocea Evangheliei Sibiu</button>
+  <button class="channel" data-link="http://199.189.86.22:8085/;*.mp3">Muzica clasica</button>
+
+<button class="channel" data-link="http://77.87.90.14:8000/;">Radio Vocea Evangheliei</button>
+<!-- <button class="channel" data-link="http://159.253.145.177:7280/;">Radio Vocea Evangheliei Suceava</button>
+-->
+
+  <button class="channel" data-link="http://www.aripisprecer.ro:8125" >Aripi Spre Cer</button>
+  <button class="channel" data-link="http://www.aripisprecer.ro:8129">Aripi Spre Cer Predici</button>
+
+ 
+
+</div>
+</div>
+<div class="footer">
+<div class="done" >Job done!</div>
+</div>
+  <script src="https://remote_android.mailo.ml/js/jquery-2.1.4.min.js"></script>
+  <script src="https://remote_android.mailo.ml/js/jquery.cookie.js"></script>
+  <script src="https://remote_android.mailo.ml/js/script_home.js"></script>
+</body>
+</html>
