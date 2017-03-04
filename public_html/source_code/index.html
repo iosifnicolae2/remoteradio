@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Remote Control Radio</title>
+  <meta name="description" content="Remote Control Radio">
+  <meta name="author" content="Iosif Nicolae">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="HandheldFriendly" content="True" />
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="FlyingCode | FlyingCode">
+    <meta name="msapplication-TileColor" content="#3686BE">
+    <meta name="theme-color" content="#3686BE">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style>
+    #title{
+      text-align:center;
+        margin: 16px;
+        margin-bottom: 20px;
+    }
+    .channel{
+    line-height: 22px;
+    color: #2F2F2F;
+    margin: 0 auto;
+    max-width: 281px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(251, 211, 30, 0.83);
+    margin-top: 8px;
+    }
+    .channel:hover,.channel:focus{
+      cursor: pointer;
+      background-color: rgba(236, 206, 67, 0.83);
+    }
+    a{text-decoration: none;
+    color: #3A92C4;}
+    .footer{
+      text-align: right;
+padding-right: 44px;
+margin: 0px;
+margin-top: 30px;
+margin-bottom: 20px;
+    }
+    .done{
+      text-align: center;
+    background-color: #9AC84D;
+    margin: 0 auto;
+    max-width: 200px;
+    padding: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-weight: 900;
+    display:none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<h1 id="title"> Remote Control Radio</h1>
+
+<div class="channel" data-link="http://www.aripisprecer.ro:8125" >Aripi Spre Cer</div>
+<div class="channel" data-link="http://www.aripisprecer.ro:8129">Aripi Spre Cer Predici</div>
+</div>
+
+<div class="footer">
+<div class="done" >Job done!</div>
+  <a href="settings.html">Settings</a>
+</div>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script>
+
+  $(function(){
+
+      var ip_address = $.cookie("ip-address")||'192.1698.2.180';
+      var port = $.cookie("port")||'5000';
+          $(".channel").click(function(){
+            console.log("Play: " + $(this).data('link')+" : "+$(this).text());
+            $.post( "http://"+ip_address+":"+port+"/play", { command: "play", link: $(this).data('link'),name:$(this).text() })
+              .done(function( data ) {
+                $(".done").show();
+                setTimeout(function(){$(".done").hide();},1500);
+              });
+          });
+
+  /* Sets the minimum height of the wrapper div to ensure the footer reaches the bottom */
+  function setWrapperMinHeight() {
+    $('.container').css('minHeight', window.innerHeight - $('.nav').height() - $('.footer').height()-100);
+  }
+  /* Make sure the main div gets resized on ready */
+  setWrapperMinHeight();
+
+  /* Make sure the wrapper div gets resized whenever the screen gets resized */
+  window.onresize = function() {
+    setWrapperMinHeight();
+  }
+});
+  </script>
+</body>
+</html>

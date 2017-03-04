@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Remote Control Radio</title>
+  <meta name="description" content="Remote Control Radio">
+  <meta name="author" content="Iosif Nicolae">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="HandheldFriendly" content="True" />
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="FlyingCode | FlyingCode">
+    <meta name="msapplication-TileColor" content="#3686BE">
+    <meta name="theme-color" content="#3686BE">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style>
+    #title{
+      text-align:center;
+        margin: 16px;
+        margin-bottom: 20px;
+    }
+    .channel{
+    line-height: 22px;
+    color: #2F2F2F;
+    margin: 0 auto;
+    max-width: 281px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(251, 211, 30, 0.83);
+    margin-top: 8px;
+    }
+    .channel:hover,.channel:focus{
+      cursor: pointer;
+      background-color: rgba(236, 206, 67, 0.83);
+    }
+    .container{text-align:center;}
+    a{text-decoration: none;
+    color: #3A92C4;}
+    .footer{
+      text-align: right;
+padding-right: 44px;
+margin: 0px;
+margin-top: 30px;
+margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body >
+<div class="container">
+<h1 id="title"> Settings Remote Control Radio</h1>
+    <form id="settings">
+        <p>Device address: <input type="text" name="ip-address" value="192.168.2.180"></p>
+        <p>Port number: <input type="text" name="port-number" value="5000"></p>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+
+  <div class="footer">
+    <a href="index.html">Home</a>
+  </div>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+  <script>
+    $(function(){
+
+      $( "form#settings" ).submit(function( event ) {
+
+        event.preventDefault();
+        $.each($( this ).serializeArray(), function(index,value ) {
+          $.cookie(value['name'], value['value']);
+        });
+      });
+    /* Sets the minimum height of the wrapper div to ensure the footer reaches the bottom */
+    function setWrapperMinHeight() {
+      $('.container').css('minHeight', window.innerHeight - $('.nav').height() - $('.footer').height()-100);
+    }
+    /* Make sure the main div gets resized on ready */
+    setWrapperMinHeight();
+
+    /* Make sure the wrapper div gets resized whenever the screen gets resized */
+    window.onresize = function() {
+      setWrapperMinHeight();
+    }
+  });
+  </script>
+</body>
+</html>
