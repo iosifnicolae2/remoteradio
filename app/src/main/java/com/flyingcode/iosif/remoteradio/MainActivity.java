@@ -111,22 +111,22 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
         server.get("/", new HttpServerRequestCallback() {
             @Override
             public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
-                response.getHeaders().set("Access-Control-Allow-Origin", "http://remote_android.mailo.ml");
+                response.getHeaders().set("Access-Control-Allow-Origin", "http://www.remote-android.mailo.ml");
                 //
                 //response.send("HEHE!");
                 try {
-                    response.redirect("http://remote_android.mailo.ml?ip="+ URLEncoder.encode(ip_address+":"+port_listen, "utf-8"));
+                    response.redirect("http://www.remote-android.mailo.ml?ip="+ URLEncoder.encode(ip_address+":"+port_listen, "utf-8"));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                //response.send("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"> <head> <title>Remote Android Radio</title> <style type=\"text/css\"> body, html{margin: 0; padding: 0; height: 100%; overflow: hidden;}#content{position:absolute; left: 0; right: 0; bottom: 0; top: 0px;}</style> </head> <body> <div id=\"content\"> <iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://remote_android.mailo.ml\"/> </div></body></html>");
+                //response.send("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"> <head> <title>Remote Android Radio</title> <style type=\"text/css\"> body, html{margin: 0; padding: 0; height: 100%; overflow: hidden;}#content{position:absolute; left: 0; right: 0; bottom: 0; top: 0px;}</style> </head> <body> <div id=\"content\"> <iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://www.remote-android.mailo.ml\"/> </div></body></html>");
             }
         });
        /* server.get("/settings.html", new HttpServerRequestCallback() {
             @Override
             public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
 
-                response.send("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"> <head> <title>Remote Android Radio</title> <style type=\"text/css\"> body, html{margin: 0; padding: 0; height: 100%; overflow: hidden;}#content{position:absolute; left: 0; right: 0; bottom: 0; top: 0px;}</style> </head> <body> <div id=\"content\"> <iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://remote_android.mailo.ml/settings.html\"/> </div></body></html>");
+                response.send("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"> <head> <title>Remote Android Radio</title> <style type=\"text/css\"> body, html{margin: 0; padding: 0; height: 100%; overflow: hidden;}#content{position:absolute; left: 0; right: 0; bottom: 0; top: 0px;}</style> </head> <body> <div id=\"content\"> <iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://www.remote-android.mailo.ml/settings.html\"/> </div></body></html>");
             }
         });*/
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
             @Override
             public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
                 String  data =  request.getBody().get().toString();
-                response.getHeaders().set("Access-Control-Allow-Origin", "http://remote_android.mailo.ml");
+                response.getHeaders().set("Access-Control-Allow-Origin", "http://www.remote-android.mailo.ml");
 
                 Matcher matcher;
                 String url="",title="",command="";
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
             @Override
             public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
                 stopRadio();
-                response.getHeaders().set("Access-Control-Allow-Origin", "http://remote_android.mailo.ml");
+                response.getHeaders().set("Access-Control-Allow-Origin", "http://www.remote-android.mailo.ml");
                 response.send("i will stop stream");
             }
         });
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
             @Override
             public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
 
-                response.getHeaders().set("Access-Control-Allow-Origin", "http://remote_android.mailo.ml");
+                response.getHeaders().set("Access-Control-Allow-Origin", "http://www.remote-android.mailo.ml");
                 response.send(station.toString());
             }
         });
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements RadioPlayer.Liste
         server.get("/ping", new HttpServerRequestCallback() {
             @Override
             public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
-                response.getHeaders().set("Access-Control-Allow-Origin", "http://remote_android.mailo.ml");
+                response.getHeaders().set("Access-Control-Allow-Origin", "http://www.remote-android.mailo.ml");
                 response.send("ok");
             }
         });

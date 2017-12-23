@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RemoteRadio.iml" filepath="$PROJECT_DIR$/RemoteRadio.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/Projects/Android/remoteradio/app/app.iml" filepath="$USER_HOME$/Documents/Projects/Android/remoteradio/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/Projects/Android/remoteradio/remoteradio.iml" filepath="$USER_HOME$/Documents/Projects/Android/remoteradio/remoteradio.iml" />
     </modules>
   </component>
 </project>
